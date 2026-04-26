@@ -41,7 +41,6 @@ def factorial(n):
         result *= i
     return result
     
-
 def menu_options():
     print("===Simple Calculator CLI===")
     print("1. Addition")
