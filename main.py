@@ -28,11 +28,14 @@ def square_root(n):
     try:
         return math.sqrt(n)
     except ValueError:
-        return "Cannot take square root of negative number"
+        return "Cannot take square root of negative number!"
 
 def factorial(n):
+    if not n.lstrip("-").isdigit():
+        return "Factorial only works for integers!"
+    n = int(n)
     if n < 0:
-        return "Cannot take factorial of a negative number"
+        return "Cannot take factorial of a negative number!"
     result = 1
     for i in range(1, n+1):
         result *= i
@@ -58,10 +61,12 @@ while True:
     
     try:
         if option in ['1', '2', '3', '4', '5', '6']:
-            a = int(input("Enter the first number: "))
-            b = int(input("Enter the second number: "))
-        elif option in ['7', '8']:
-            n = int(input("Enter the number: "))
+            a = float(input("Enter the first number: ").replace(",", "."))
+            b = float(input("Enter the second number: ").replace(",", "."))
+        elif option in '7':
+            n = float(input("Enter the number: ").replace(",", "."))
+        elif option in '8':
+            n = input("Enter the number: ")
         elif option == '9':
             print("===The Program Ends===")
             break
@@ -69,8 +74,8 @@ while True:
             print("Invalid Option")
             continue
     except ValueError:
-            print("The input must be a number")
-            continue
+        print("The input must be a number!")
+        continue
 
     if option == '1':
         result = addition(a,b)
@@ -91,7 +96,7 @@ while True:
     
     print(f"Result = {result}")
     
-    continue_or_not = input("Do you want to continue? (y/n): ")
+    continue_or_not = input("Do you want to continue? (y/n): ").lower()
     if continue_or_not == 'n':
         print("===The Program Ends===")
         break
