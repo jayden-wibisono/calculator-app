@@ -43,14 +43,10 @@ def factorial(n):
     
 def menu_options():
     print("===Simple Calculator CLI===")
-    print("1. Addition")
-    print("2. Subtraction")
-    print("3. Multiplication")
-    print("4. Division")
-    print("5. Exponent")
-    print("6. Modulo")
-    print("7. Square Root")
-    print("8. Factorial")
+    print(f"{'1. Addition':20} 2. Subtraction")
+    print(f"{'3. Multiplication':20} 4. Division")
+    print(f"{'5. Exponent':20} 6. Modulo")
+    print(f"{'7. Square Root':20} 8. Factorial")
     print("9. Exit")
 
 while True:
